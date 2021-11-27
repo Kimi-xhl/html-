@@ -5,7 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>第一课</title>
+  <!-- 链接 外部样式表 -->
   <link rel="stylesheet" href="1.css">
+  <link rel="stylesheet" href="2.css">
+  <style>
+    /* 内联样式 */
+  </style>
 </head>
 <body>
   <!-- HTML 元素 以开始标签开始  结束标签结束 -->
@@ -14,7 +19,7 @@
   <a href="http://www.taobao.com">aaa
     <a href="http://www.baidu.com"> t22aoao  </a>
   </a>
-  <div></div>
+  <div class="redBox"></div>
   <!-- a标签 超链接标签 -->
   <!-- 列表标签 -->
   <!-- 无序列表 -->
@@ -23,16 +28,37 @@
     <li>数学</li>
     <li>英语</li>
   </ul>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
   <!-- 有序列表 -->
-  <ol>
+  <ol style="border: 10px solid #000;">
     <li>语文</li>
     <li>数学</li>
     <li>英语</li>
   </ol>
-  <div id="box1" style="margin-top:100px;width: 200px;height: 200px;background-color: blue;padding: 100px;">
-    <div id="box2" style="width: 200px;height:200px;background: #fff;border: 10px solid #000;">
-      <p>111111</p>
+  <div id="box1">
+
+  </div>
+
+  <div id="div1" style="margin-top:10px">
+    
+  </div>
+  <div class="redBox"  style="margin-top:10px">
+    <div class="box-redBox1">
+      <div class="boxBlack">
+      </div>
     </div>
+    <div class="box-redBox1">
+      <div class="boxBlack"></div>
+    </div>
+    <div class="box-redBox1"></div>
+    <div class="box-redBox1"></div>
+  </div>
+  <div class="redBox"  style="margin-top:10px">
+
   </div>
 </body>
 </html>
