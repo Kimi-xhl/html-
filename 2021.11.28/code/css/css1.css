@@ -1,0 +1,7 @@
+/* css 文件 层级样式表 */
+.Box2{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin-top: 100px;
+}
