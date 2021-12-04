@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <!-- 弹性盒子 -->
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .box1 {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    flex-direction: row;
+    /* row 默认 从左到右 */
+    /* row-reverse 从右到左 */
+    /* column 垂直方向 起点为上沿  */
+    /* column-reverse 垂直方向 起点为下沿  */
+    border: 4px solid #ddd;
+    justify-content: flex-start;
+    /* 内容在主轴上的对齐方式 */
+    align-items: stretch;
+    /* 内容在交叉轴上的对齐方式 *   /* baseline 项目的第一行文字的基线对齐 */
+    /* align-items 默认值 stretch */
+    flex-wrap: wrap
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: #Ff0000;
+    color: white;
+  }
+</style>
+
+<body>
+  <div class="box1">
+    <div class="box" style="font-size: 22px;">
+      <p>
+        111
+      </p>
+    </div>
+    <div class="box" style="font-size: 32px;">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+
+  </div>
+</body>
+
+</html>

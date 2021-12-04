@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				color: red!important;
+			}
+			div {
+				color: blue;
+			}
+			.box1 {
+				color: orange;
+			}
+			#mybox1 {
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			1、通配符选择器 *: 作用到所有的标签对象
+			2. 标签选择器 (标签名称)：作用到对应的标签名称
+			3. 类名选择器 (以标签属性class的值)： 作用到class值对应的标签
+			4. id选择器
+			
+			选择器的优先级：
+			 !important > 内联样式 >  id选择器 > 类名选择器 > 标签选择器 > 通配符选择器
+			
+		 -->
+		 <div id="mybox1" class="box1" style="color: plum;">盒子</div>
+		 <p>盒子2</p>
+		 <span>盒子3</span>
+		 <b>盒子4</b>
+	</body>
+</html>
