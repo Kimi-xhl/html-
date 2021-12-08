@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>骰子</title>
+</head>
+<style>
+  .box{
+    background-color: #ddd;
+    width: 100px;
+    margin: 50px;
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .item{
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  .box:nth-of-type(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .box:nth-of-type(3){
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: row-reverse;
+  }
+  .box:nth-of-type(3) .item:nth-of-type(2){
+    align-self: center;
+  }
+  .box:nth-of-type(3) .item:nth-last-of-type(3){
+    align-self: flex-end;
+  }
+
+  .box:nth-of-type(4){
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .box:nth-of-type(4) > .item{
+    margin:0 15% ;
+  }
+
+  .box:nth-of-type(5){
+    display: flex;
+  }
+  .box:nth-of-type(5) > .column{
+    flex:1
+  }
+  .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+</style>
+<style>
+  .box:nth-of-type(6){
+    display: flex;
+    flex-direction: column;
+  }
+  .box:nth-of-type(6) .row{
+    flex: 1;
+    align-items: center;
+  }
+  .box:nth-of-type(6) .row:nth-of-type(1){
+    display: flex;
+    justify-content: space-around
+  }
+  .box:nth-of-type(6) .row:nth-of-type(2){
+    display: flex;
+    justify-content: center;
+  }
+  .box:nth-of-type(6) .row:nth-of-type(3){
+    display: flex;
+    justify-content: space-around
+  }
+  
+  .box:nth-of-type(7){
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .box:nth-of-type(7) > .item{
+    margin:0 15% ;
+  }
+
+  
+</style>
+<body>
+  <div class="box">
+    <div class="item"></div>
+  </div>
+
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div class="box">
+    <div class="column">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div class="column">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="row">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div class="row">
+      <div class="item"></div>
+    </div>
+    <div class="row">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  
+  <div class="box">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+  </div>
+
+  <div class="red"></div>
+  <div class="tran"></div>
+
+</body>
+</html>
