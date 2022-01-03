@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      line-height: 300px;
+      font-size: 44px;
+      background-color:antiquewhite
+    }
+    .sacle{
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <p id="demo" > 点击我看效果 </p>
+  <button onclick="btnClick()">点击触发点击事件</button>
+  <button onmousedown="btnOnMouseDown()">点击触发鼠标落下事件</button>
+  <button onmouseup="btnOnMouseUp()">点击触发鼠标抬起事件</button>
+  <div class="box" onmousemove="move(this)" onmouseout="out(this)">鼠标移动事件</div>
+  <input type="text" onkeypress="EnterPress(event)">
+  <form></form>
+</body>
+<script src="./事件.js"></script>
+</html>

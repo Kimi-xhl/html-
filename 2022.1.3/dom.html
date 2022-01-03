@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .text{
+    color: blueviolet;
+  }
+</style>
+<body>
+  <p class="text">sdasd</p>
+  <p class="text">sdasd</p>
+  <p class="text">sdasd</p>
+</body>
+<script>
+  // 获取dom的方式
+  // document.getElementById 通过ID
+  // document.getElementsByClassName 通过class
+  // document.getElementsByTagName('p') 通过标签获取dom
+  // document.querySelector('.text') 通过选择器获取 单个 dom
+  // document.querySelectorAll('.text')通过选择器获取 dom
+  document.querySelector('.text').innerHTML = "<span>你好</span>"
+
+  // 创建dom元素
+  var newSpan =  document.createElement('span')
+
+  // 创建文本节点
+  var text = document.createTextNode(' 这是一个span')
+  var ads = document.createTextNode(' append ')
+
+  // 向后添加dom节点 相同节点不可重复 它用于添加新元素到尾部
+  newSpan.appendChild(text)
+
+  document.querySelectorAll('.text')[1].appendChild(newSpan)
+
+  // 向前添加dom节点 它用于添加新元素到开始位置
+  newSpan.insertBefore(ads,text)
+</script>
+</html>

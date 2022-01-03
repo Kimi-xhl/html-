@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    justify-content: space-between;
+  }
+  .month{
+    width: 100px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: rgb(46, 46, 46);
+    margin-bottom: 10px;
+  }
+  #put{
+    height: 100px;
+    background: white;
+  }
+</style>
+<body>
+  <div style="background-color: antiquewhite;padding: 20px;width: 360px;box-sizing: border-box;">
+    <div class="box">
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+      <div class="month"></div>
+    </div>
+    <div id="put">
+
+    </div>
+  </div>
+</body>
+<script>
+  // 遍历
+  var list = document.getElementsByClassName('month')
+  for(var i=0;i<list.length;i++){
+    console.log([list[i]]);
+    list[i].innerHTML = (i +1) + '月'
+    list[i].onmouseover = whiteB;
+    list[i].onmouseout = drakB;
+  }
+  function whiteB(){
+    this.style.backgroundColor = "rgb(255,255,255)"
+    this.style.color = "rgb(255,0,0)"
+    var num
+    for(var i=0;i<list.length;i++){
+      if(list[i] === this){
+        num = i
+      }
+    }
+    console.log(num);
+    document.getElementById('put').innerHTML = "<p>" +(num+1) + "月活动" + "</p>"
+    var dom = document.createElement("p")
+    var text = document.createTextNode("这是"+(num+1)+"的内容")
+    dom.append(text)
+    document.getElementById('put').appendChild(dom)
+  }
+  function drakB(){
+    this.style.backgroundColor = "rgb(46,46,46)"
+    this.style.color = "rgb(255,255,255)"
+  }
+
+
+</script>
+</html>

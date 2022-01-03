@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>button{width: 200px; height: 200px;}</style>
+<body>
+  <!-- 第一种方法 -->
+  <button onclick="sayHello()">点击</button>
+  <!-- 第二种方法 -->
+  <button id="btn">第二种方法</button>
+  <!-- 第三种方法 -->
+  <button id="btn1">第三种方法</button>
+</body>
+<script>
+  // 第一种方法直接在html 上面添加 坏处js html 不分离
+  function sayHello(){
+    alert("你好")
+  }
+  
+  function sayHi(){
+    alert("Hi")
+  }
+
+  // 第二种方法 js 只能绑定一个事件 多次绑定会覆盖原先绑定事件 好处：兼容性高 兼容ie6/7/8
+  document.getElementById('btn').onclick = sayHello
+  document.getElementById('btn').onclick = sayHi
+
+
+  // 事件监听器 第三种方法 // 不兼容ie8以下
+  /**
+   * addEventListener(参数1)
+   * 
+   * 参数1 事件名称
+   */
+  document.getElementById('btn1').addEventListener('click',sayHi)
+  document.getElementById('btn1').addEventListener('click',sayHello)
+</script>
+</html>

@@ -88,7 +88,6 @@
 var array = [165132,416541351,454,8875] // 4
 
 var sum = 0
-
 for(var i =0;i<array.length;i++){
   sum = sum + array[i]
 }
