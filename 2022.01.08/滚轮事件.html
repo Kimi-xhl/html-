@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html{
+    height: 755px;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .box{
+    background-color: red;
+    height: 300px;
+    width: 300px;
+  }
+  #ss{
+    width: 50px;
+    height: 100px;
+    background: aliceblue;
+  }
+</style>
+<body>
+  <div id="ss"></div>
+  <div class="box"> 你好 </div>
+</body>
+<script>
+  var $box = document.querySelector('.box')
+  //clientHeight  = height + padding 
+  //offsetHeigt = height + padding + border
+  //clientTop = 内容距离 边框的距离
+  //offsetTop = 内容距离顶部的高度
+  // console.log([$box.offsetTop]);
+  //clientWidth  = Width + padding 
+  //offsetWidth = Width + padding + border
+  //document.documentElement.scrollTop //滚动条顶部高度
+  window.addEventListener('scroll',function(e) {  
+    var scrolled = document.documentElement.scrollTop / 
+    (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+})
+</script>
+</html>

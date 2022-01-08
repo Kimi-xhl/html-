@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  body{
+    height: 1000px;
+    background-color: #000;
+  }
+  h1{
+    color: #fff;
+    font-size: 64px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1.0;
+    /* text-align: center; */
+    transform: translate(-50%,-50%);
+    /* width: 100%; */
+  }
+</style>
+<body>
+  <h1>
+    iPhone 11 Pro called.<br>
+    It wants its chip back.
+  </h1>
+</body>
+<script>
+  window.addEventListener('scroll', function () {
+    var scrolled = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+    console.log(scrolled);
+
+    var $h1 = document.querySelector('h1')
+    $h1.style.opacity = 1 - scrolled
+
+  })
+</script>
+</html>
