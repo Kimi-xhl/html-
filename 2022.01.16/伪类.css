@@ -1,0 +1,49 @@
+/** css伪类是用来添加一些选择器的特殊效果
+selector:Pseudo-classes { property : value }
+ */
+/*在css的中a:link 和 a:visited 之后，才是有效的。*/
+/*"a:active 必须在 a:hover之后*/
+/*未访问的链接*/
+a:link{
+    color: #FF0000;
+}
+
+/*已访问过的链接*/
+a:visited{
+    color: #1da6ba;
+}
+/*鼠标划过的链接*/
+a:hover{
+    color: #f5d185;
+}
+/*选中的链接*/
+a:active{
+    background-color: saddlebrown;
+}
+/**/
+body div.box > div:nth-of-type(2){
+    color: #0364ff;
+}
+/*获取焦点*/
+/*选择紧跟<input>元素的首个元素*/
+input:focus + span{
+    display: block;
+}
+span{
+    display: none;
+}
+
+/*第一个字*/
+p:first-letter{
+    color: #0364ff;
+    font-size: xx-large;
+}
+/*第一行*/
+p:first-line{
+    color: #4caf50;
+}
+
+/*为所有相同的父元素中位于p元素之后的所有ul元素*/
+.box > p ~ ul{
+    background-color: #ff0000;
+}
