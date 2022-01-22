@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ #myCanvas{
+     border: 1px solid #000;
+     /*border-radius: 50%;*/
+     /*transform: rotate(0deg);*/
+     /*animation: rotateCanvas 30s linear infinite;*/
+ }
+
+ /*@keyframes rotateCanvas*/
+ /*{*/
+ /*    0% { transform: rotate(0deg)}*/
+ /*    100% { transform: rotate(360deg)}*/
+ /*}*/
+
+</style>
+<body>
+
+    <img id="scream" src="Canvas_default_grid.png">
+    <div class="container">
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+    </div>
+</body>
+</html>
+<script>
+    var canvas = document.getElementById('myCanvas') // 获取dom 元素
+    //获取 2d 上下文对象
+    var ctx = canvas.getContext('2d');
+    //填充矩形fillRect(x,y,width,height)
+    // ctx.fillRect(0,0,100,50);
+    // //绘制矩形边框strokeRect(x,y,width,height)
+    // ctx.strokeRect(0,60,100,50);
+    // //清除矩形clearRect(x,y,width,height)
+    // ctx.clearRect(0,0,50,25)
+
+// 绘制路径
+//     使用路径绘制图形需要做一些额外的步骤
+//         1.创建起点
+//         2.调用绘制方法绘制出路径
+//         3.把路径封闭
+//         4.一旦路径生成,通过描边或者填充路径来渲染图像
+
+    /**
+     * 径向渐变
+     */
+
+    // function draw() {
+    //     var grd = ctx.createRadialGradient(75,50,5,90,60,100); //径向渐变
+    //     grd.addColorStop(0,'red')
+    //     grd.addColorStop(1,'white')
+    //
+    //     ctx.fillStyle=grd
+    //     ctx.fillRect(10,10,150,80);
+    // }
+
+    /**
+     * 线性渐变
+     */
+
+    function draw() {
+        var grd = ctx.createLinearGradient(0,0,200,0); //径向渐变
+        grd.addColorStop(0,'red')
+        grd.addColorStop(1,'white')
+
+        ctx.fillStyle=grd
+        ctx.fillRect(10,10,150,80);
+    }
+
+    /**
+     * 绘制三角形
+     */
+    // function draw() {
+    //     var canvas = document.getElementById('canvas') // 获取dom 元素
+    //     //获取 2d 上下文对象
+    //     var ctx = canvas.getContext('2d')
+    //     ctx.beginPath() // 新建一条path
+    //     ctx.moveTo(50,50); // 把画笔移动到指定的坐标
+    //     ctx.lineTo(200,50); // 绘制一条从当前坐标到指定坐标(200,50)的直线
+    //     ctx.lineTo(200,200)
+    //     ctx.closePath(); // 闭合路径,会拉一条从当前点到path起始点的直线,如果重合什么也不做
+    //     ctx.stroke() // 绘制路径
+    //     ctx.fill() // 填充闭合区域, 如果路径没有闭合则fill() 会自动闭合
+    // }
+
+    /**
+     * 绘制圆弧
+     */
+    // function draw() {
+    //     ctx.beginPath()
+    //     /**
+    //      * arc(x,y,r,startAngel,endAngel,anticlockwise)
+    //      * 以（x，y）为圆心，以r作为半径，从startAngel弧度开始到
+    //      * endAngel弧度结束，anticlockwise布尔值 是否逆时针 true逆时针 false顺时针 （默认顺时针）
+    //      */
+    //     ctx.arc(50,50,40,0,Math.PI / 2, false)
+    //     ctx.stroke()
+    // }
+
+    /**
+     * 太极图
+     */
+    // function draw() {
+    //     ctx.beginPath();
+    //     ctx.arc(200,100,100,1.5 * Math.PI, 0.5 * Math.PI,false)
+    //     ctx.arc(200,300,100,1.5 * Math.PI, 0.5 * Math.PI, true)
+    //     ctx.arc(200,200,200,0.5 * Math.PI, 1.5 * Math.PI, false)
+    //     ctx.closePath();
+    //     ctx.fill()
+    //
+    //     ctx.beginPath();
+    //     ctx.arc(200,100,25,0,Math.PI * 2,false)
+    //     ctx.fillStyle = 'white'
+    //     ctx.closePath();
+    //     ctx.fill();
+    //
+    //     ctx.beginPath();
+    //     ctx.arc(200,300,25,0,Math.PI * 2,false)
+    //     ctx.fillStyle = 'black'
+    //     ctx.closePath();
+    //     ctx.fill();
+    //
+    // }
+
+    /**
+     * 加载图片
+     */
+    // var img = document.getElementById('scream')
+    // img.onload = draw()
+    // function draw() {
+    //     ctx.drawImage(img,10,10)
+    // }
+    draw()
+</script>
