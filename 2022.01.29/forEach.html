@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    // 回圈
+</body>
+<script>
+    let array = [1,30,4,5]
+    // forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。
+    /**
+     * 参数1 当前元素
+     * 参数2 当前元素的引索值
+     * 参数3 当前元素所属的数组对象
+     *
+     * 注意 forEach()本身是不支持的 continue 与 break 语句的
+     * 使用 return 语句实现 continue 关键字的效果
+     */
+    array.forEach(function (item, index, arr) {
+        console.log(item, index , arr)
+    })
+</script>
+</html>

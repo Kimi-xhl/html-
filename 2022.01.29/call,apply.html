@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     *  apply()
+     *  用于改变this的指向
+     */
+
+    const steven = {
+        name: 'Steven',
+        phoneBattery: 70,
+        charge: function (level, level1, level2) {
+            this.phoneBattery  = level + level1 + level2
+        }
+    }
+
+    const becky = {
+        name: 'becky',
+        phoneBattery: 30,
+    }
+
+    // steven.charge.call(becky, 30, 50, 10)
+    steven.charge.apply(becky, [30,50,10])
+
+    console.log(becky)
+
+
+</script>
+</html>
