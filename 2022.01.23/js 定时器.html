@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="clearInterval(int)"> 停止 </button>
+    <div></div>
+</body>
+<script>
+
+    /**
+     * setInterval() ：按照指定的周期（以毫秒计）来调用函数或计算表达式。方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。
+     * setTimeout() ：在指定的毫秒数后调用函数或计算表达式。
+     */
+
+    /**
+     * setInterval(function(),millisec)
+     *
+     * function() 必循 需要调用的函数或者执行的代码
+     * millisec 必循 周期执行或者调用function()之间的间隔 ms
+     */
+    // var times = 1
+    // function time() {
+    //     times ++
+    //     document.querySelector('div').innerHTML = times
+    // }
+    //
+    // var int = setInterval(time,1000)
+
+    /**
+     * setTimeout()
+     * setTimeout(function(),millisec)
+     * function() 必循 需要调用的函数或者执行的代码
+     * millisec 必循 周期执行或者调用function()之间的间隔 ms
+     */
+
+    setTimeout(function (){
+        document.write("停止之后")
+    },5000)
+
+</script>
+</html>

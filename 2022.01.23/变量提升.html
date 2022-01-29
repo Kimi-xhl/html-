@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    /**
+     * js中 函数及变量的声明都将被提升到函数的最顶部
+     * 在js中 变量可以先使用后声明
+     */
+
+    z = 5
+    document.getElementById('demo').innerHTML = z
+    var z
+
+    /**
+     * js中只有声明的变量会提升，初始化不会
+     */
+
+    var x = 5
+    document.getElementById('demo').innerHTML = x + "" + y
+    var y = 7
+</script>
+</html>

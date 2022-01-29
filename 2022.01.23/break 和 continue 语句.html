@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>点击按钮测试break语句 </p>
+    <button onclick="myFunction()">点击这里</button>
+    <p id="demo">
+</body>
+<script>
+    /**
+     * break 语句用于跳出循环
+     * continue 用于跳出循环中的一个迭代
+     *
+     * if 语句只有一行代码的时候可以省略花括号
+     */
+    function myFunction() {
+        var x=""
+        for(var i=0;i<10;i++){
+            if(i==3) continue
+                // break;
+
+            x= x+"number: "+ i + "<br>";
+        }
+        document.getElementById('demo').innerHTML = x
+    }
+</script>
+</html>

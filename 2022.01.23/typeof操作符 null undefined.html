@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>type of 操作符返回变量或表达式类型</p>undefined
+    <p id="demo"></p>
+</body>
+<script>
+    var und
+    document.getElementById("demo").innerHTML =
+        typeof "John" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof  false + "<br>" +
+        typeof ["1",2,3,4] + "<br>" +
+        typeof {name: 'john', age:18} + "<br>" +
+        typeof null + "<br>" +
+        typeof und
+
+    // 在JavaScript 中 数组是一种特殊的对象类型 因此 typeof ["1",2,3,4] 返回 object
+
+    /**
+     * null 在js中表示 “什么都没有”
+     * null 是一个只有一个值的特殊数据类型，表示一个空对象的引用
+     * 对象可以通过设置为 null 来清空。
+     * 当使用完一个比较大的对象时，需要对其进行释放内存时，设置为 null。
+     */
+
+    // var peroson = {name: 'john', lastname:'Doe'}
+    // peroson = null
+
+    /**
+     * undefined
+     * 在js中 undefined 是一个没有设置值的变量
+     * 任何变量都可以通过设置值为 undefined 来清空。 类型为 undefined.
+     */
+    // und = 1
+    // und = undefined
+
+</script>
+</html>
