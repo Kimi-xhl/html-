@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+@keyframes bane{
+    0% {
+        left: 0;
+        top: 0;
+    }
+    50% {
+        left: 100px;
+        top: 10px;
+    }
+    100% {
+        left: 0;
+    }
+}
+.box{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: #ff0000;
+    animation: bane 2s ease infinite;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <form method="post">
+        <input name="username" placeholder="请输入用户名" style="width: 200px;">
+        <button type="submit">提交</button>
+    </form>
+</body>
+<script>
+</script>
+</html>

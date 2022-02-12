@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // function sum(x,y,z) {
+    //     return x + y +z
+    // }
+
+    // let sum = function (x,y,z) {
+    //     return x + y + z
+    // }
+
+
+    /**
+     * 引入箭头函数的作用：更简短的函数并且不绑定this
+     *
+     * 箭头函数相当于匿名函数，并且简化了函数定义。箭头函数有两种格式，一种像上面的，
+     * 只包含一个表达式，连{ ... }和return都省略掉了。还有一种可以包含多条语句，这时候就不能省略{ ... }和return：
+     * 如果参数不是一个，就需要用括号()括起来：
+     */
+
+    let sum = (x,y,z) => {
+        return x+y+z
+    }
+    let fn = x => x*x
+    // function fn (x){
+    //     return x*x
+    // }
+    console.log(fn(2))
+
+    var birth = 100
+    /**
+     * this是词法作用域，由上下文确定。
+     */
+    var obj = {
+        birth: 1990,
+        getAge: function (){
+            var b = this.birth; // 1990
+            var fn = () => {
+                return this.birth  // this指向
+            }
+            return fn()
+        }
+    }
+
+    console.log(obj.getAge())
+
+    /**
+     * 练习
+     */
+
+    var arr = [10,20,1,2]
+    arr.sort((a,b) => a-b)
+    console.log(arr)
+
+
+    /**
+     * ajax
+     */
+
+</script>
+</html>

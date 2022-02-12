@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * Es5
+     * 相等运算符（==）和严格相等运算符（===）。它们都有缺点，前者会自动转换数据类型，后者的NaN不等于自身，以及+0等于-0
+     * Es6 Object.is
+     * Object.is就是部署这个算法的新方法。它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
+     *
+     */
+
+
+    //
+    // console.log(Object.is({},{}))
+    // console.log({} === {})
+
+    // 差异1
+    // console.log(+0 === -0)
+    // console.log(Object.is(+0, -0))
+
+    // 差异2
+    // console.log(NaN === NaN)
+    // console.log(Object.is(NaN, NaN))
+
+    /**
+     * Object.assign()方法用于对象的合并 (浅拷贝)
+     * 注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。
+     * !!! null 和 underfined 不能转换为对象
+     */
+    // console.log(Object.assign(null))
+
+    const target = { a: 1, b:1 }
+    const source1 = { b: 2 }
+    const source2 = { c: 3, b:1 }
+
+    var c = Object.assign(target, source1 ,source2)
+    // console.log(c)
+
+    /**
+     * 如果只有一个参数，Object.assign()会直接返回该参数。
+     */
+    // console.log(Object.assign(target) === target)
+
+    /**
+     * 浅拷贝
+     * 浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用
+     */
+    const obj1 = { a: {b: 1} }
+    const obj2 = Object.assign({}, obj1)
+
+    console.log(obj1.a.b = 2)
+    console.log(obj2)
+
+    /**
+     * 数组的处理
+     * 下面代码中，Object.assign()把数组视为属性名为 0、1、2 的对象，因此源数组的 0 号属性4覆盖了目标数组的 0 号属性1。
+     */
+    let [a,b,d] = [1,2,3]
+    console.log(Object.assign([1,2,3],[4,,]))
+</script>
+</html>

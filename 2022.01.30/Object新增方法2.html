@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * Object.keys()
+     * Object.keys方法，返回一个数组，成员是参数对象自身的
+     */
+    var obj = { foo: 'bar', baz: 42 }
+    let {keys,values, entries} = Object
+    // console.log(Object.keys(obj))
+    /**
+     * Object.values方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。
+     */
+    // console.log(Object.values(obj))
+
+    /**
+     * Object.entries()方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
+     */
+    console.log(Object.entries(obj))
+    for (let [key, value] of entries(obj)){
+        console.log([key,value])
+    }
+
+
+    /**
+     * for of 用于遍历可以迭代的对象
+     */
+    // const car = ['BMW', 'BENZ', 'Volvo']
+    // for (let string of car) {
+    //     console.log(string)
+    // }
+</script>
+</html>

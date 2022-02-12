@@ -1,0 +1,7 @@
+{
+    "name": "ni",
+    "sites": [
+        {"name":"Google", "url":"www.google.com"},
+        {"name":"Taobao", "url":"www.Taobao.com"}
+    ]
+}
