@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // readyState = 0 未初始化
+    // readyState = 1 载入 并且 开始向服务端发送数据
+    // readyState = 2 加载完成 接收服务器返回给他的数据 获得服务器响应的原始数据
+    // readyState = 3 交互 解析接收到的服务器响应数据。// 解析数据
+    // readyState = 4 完成
+
+    //status = 200 成功
+    //status = 400 参数错误
+    //status = 404 未找到资源
+    
+
+    var baseUrl = 'https://mobile-ms.uat.homecreditcfc.cn/mock/620777c90b5aa1002717e75e/example'
+
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function() {
+            if(this.readyState === 4 && this.status === 200) {
+                console.log(this.responseText)
+            }
+        }
+
+        xhttp.open("GET", baseUrl + '/query', true)
+        xhttp.send()
+    }
+    loadDoc()
+</script>
+
+</html>
