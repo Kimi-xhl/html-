@@ -83,6 +83,26 @@
         xhttp.send()
     }
 
-    loadDoc()
+    $.ajax({
+        type: "GET",
+        url: "/Json.json",
+        dataType: "JSON",
+        success: function (res) {
+            let desList = res.data.desList
+
+            desList.forEach(item => {
+                    let tbody = $('tbody')
+                    let name = $('<td>').text(item.name)
+                    let price = $('<td>').text(item.price)
+                    let weight = $('<td>').text(item.weight)
+                    let brand = $('<td>').text(item.brand)
+                    let tr = $('<tr>')
+                    tr.append(name,price,weight,brand)
+                    tbody.append(tr)
+                });
+        }
+    });
+
+    // loadDoc()
 </script>
 </html>
