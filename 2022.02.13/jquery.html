@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    var baseUrl = 'https://mobile-ms.uat.homecreditcfc.cn/mock/620777c90b5aa1002717e75e/example'
+
+    function loadDoc() {
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function() {
+        if(this.readyState === 4 && this.status === 200) {
+            console.log(this.response)
+        }
+    }
+
+    xhttp.open("GET", baseUrl + '/query', true)
+    xhttp.send()
+    }
+    loadDoc()
+
+    $.ajax({
+        type: "GET",
+        url: baseUrl + '/query',
+        dataType: "json", //返回的数据格式
+        success: function (response) {
+            console.log(response);
+        }
+        
+    });
+</script>
+</html>
