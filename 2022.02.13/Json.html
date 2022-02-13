@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    /**
+     * Json 是一种存储和交换信息的语法
+     * 纯文本
+     **/
+    var JsonObject = {
+        name : 'baidu.com'
+    }
+
+    /**
+     * 类是用于创建对象的模板
+     * 
+     * 每个类里面都包含一个特殊的方法 constructor 他是类的构造器
+     *  
+     **/
+    class WebStation{
+        name = ''
+        url = ''
+        constructor(name, url, year) {
+            this.name = name;
+            this.url = url
+            this.year = year
+        }
+        age(){
+            if(this.age>10) {
+                return '十年以上的网站'
+            }else {
+                return '十年以下的网站'
+            }
+        }
+    }
+
+    // 创建对象时会自动调用构造函数方法 constructor()。
+    var baidu = new WebStation('baidu','https://www.baidu.com',20)
+    var sina = new WebStation('sina','https://www.sina.com',10)
+    
+
+    console.log(baidu.age());    
+
+
+    function loadDoc() {
+        // 初始化XMLHttpRequset
+        var xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function() {
+            if(this.readyState === 4 && this.status === 200) {
+                let data = JSON.parse(this.response)
+                let desList = data.data.desList
+                console.log(desList);
+                
+                desList.forEach(item => {
+                    let tbody = $('tbody')
+                    let name = $('<td>').text(item.name)
+                    let price = $('<td>').text(item.price)
+                    let weight = $('<td>').text(item.weight)
+                    let brand = $('<td>').text(item.brand)
+                    let tr = $('<tr>')
+                    tr.append(name,price,weight,brand)
+                    tbody.append(tr)
+                });
+
+            }
+        }
+        
+        // 访问地址
+        xhttp.open("GET", '/Json.json')
+        // 发送请求
+        xhttp.send()
+    }
+
+    loadDoc()
+</script>
+</html>

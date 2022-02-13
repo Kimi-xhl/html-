@@ -1,0 +1,26 @@
+{
+    "code": "0",
+    "data": {
+        "list": ["苹果","香蕉"],
+        "desList": [
+            {
+                "name":"苹果",
+                "price": "919",
+                "weight": "120",
+                "brand": "ss"
+            },
+            {
+                "name":"香蕉",
+                "price": "150",
+                "weight": "156",
+                "brand": "nl"
+            },
+            {
+                "name": "草莓",
+                "price": "$1235",
+                "weight": "232",
+                "brand": "st"
+            }
+        ]
+    }
+}
