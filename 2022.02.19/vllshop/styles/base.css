@@ -1,0 +1,22 @@
+:root{
+    --color-primary:#0364ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'SourceHanSans', 'Times New Roman', serif;
+}
+@font-face {
+    font-family: SourceHanSans;
+    src: url('./font/SourceHanSansCN-Regular.otf');
+}
+    
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--color-primary);
+}

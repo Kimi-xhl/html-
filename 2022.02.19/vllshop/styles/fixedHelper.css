@@ -1,0 +1,36 @@
+#fixedHelper{
+    background-color: #152243;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    position: fixed;
+    font-size: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#fixedHelper .fixedHelperItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+#fixedHelper .fixedHelperItem img{
+    height: 25px;
+}
+#fixedHelper .fixedHelperItem span{
+    margin-top: 10px;
+}
+
+.locationPhone{
+    display: none;
+    position: absolute;
+    right: 74px;
+    width: 275px;
+    height: 80px;
+    padding: 10px 15px 10px 15px;
+    background-color: #ff0000;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/fixedHelper.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <title>Vllshop</title>
+</head>
+<body>
+    
+    <header>
+        <img src="./images/Logo.png">
+        <ul class="navbar">
+            <li class="active">首页</li>
+            <li>
+                <a href="./module.html">功能介绍</a>
+            </li>
+            <li>定价方案</li>
+            <li>案例</li>
+            <li>海外推广</li>
+            <li>Tiktok云手机</li>
+            <li>关于</li>
+        </ul>
+    </header>
+    <div id="fixedHelper">
+        <div class="fixedHelperItem">
+            <img src="./images/icon/fixedHelper1.png" alt="">
+            <span>在线咨询</span>
+        </div>
+        <div class="fixedHelperItem">
+            <img src="./images/icon/fixedHelper2.png" alt="">
+            <span>电话咨询</span>
+            <div class="locationPhone"></div>
+        </div>
+        <div class="fixedHelperItem">
+            <img src="./images/icon/fixedHelper3.png" alt="">
+            <span>公众号</span>
+        </div>
+    </div>
+    <video 
+        id="homeVideo" 
+        poster="https://asudh.oss-cn-shenzhen.aliyuncs.com/home_video.jpg" 
+        autoplay="autoplay"
+        loop="loop" 
+        muted="muted" 
+        playsinline="" 
+        preload="auto" 
+        class="home_video">
+        <source src="https://asudh.oss-cn-shenzhen.aliyuncs.com/home.mp4" type="video/mp4">
+    </video>
+</body>
+<script src="./js/header.js"></script>
+<script src="./js/fixedHelper.js"></script>
+</html>
