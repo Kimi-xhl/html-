@@ -1,0 +1,64 @@
+#fixedHelper{
+    background-color: #152243;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    position: fixed;
+    font-size: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#fixedHelper .fixedHelperItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+#fixedHelper .fixedHelperItem img{
+    height: 25px;
+}
+#fixedHelper .fixedHelperItem span{
+    margin-top: 10px;
+}
+
+.locationPhone{
+    position: absolute;
+    right: 74px;
+    width: 275px;
+    height: 80px;
+    padding: 10px 25px 10px 15px;
+    background-color: #fff;
+}
+.locationPhoneInput{
+    padding: 3px;
+    background-color: rgb(21, 34, 67);
+    display: flex;
+}
+#locationPhoneInput{
+    border: none;
+    height: 30px;
+    width: 70%;
+}
+.locationPhoneBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    cursor: pointer;
+}
+.locationPhone p{
+    color: #000;
+}
+.cancel{
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    color: #000;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+}
