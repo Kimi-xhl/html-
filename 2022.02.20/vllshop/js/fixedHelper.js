@@ -1,4 +1,4 @@
-var FixedHelper = {
+const FixedHelper = {
     locationOnline: false,
     locationPhone: false
 }

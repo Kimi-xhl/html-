@@ -1,0 +1,38 @@
+header>img:nth-of-type(1){
+    height: 50px;
+    margin: 5px;
+}
+header{
+    height: 66.25;
+    padding: 14px 5%;
+    background-color: #002b70;
+    display: flex;
+    align-items: center;
+}
+header .navbar{
+    display: flex;
+    color: #fff;
+    font-size: 17px;
+}
+.navbar li a{
+    color: #fff;
+}
+.navbar li{
+    margin-right: 20px;
+    position: relative;
+}
+.navbar li.active::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    width: 90%;
+    height: 4px;
+    background-color: #fff;
+    left: 0;
+}
+@media only screen and (max-width:768px){
+    header > ul.navbar {
+        display: none;
+    }
+}

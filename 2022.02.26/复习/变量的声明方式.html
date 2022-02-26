@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var声明变量 具有变量提升
+    console.log(x);
+    var x
+    // let 声明变量 不具备变量提升 且有块级作用域
+    // let y = 5
+    // function getY() {
+    //     console.log(y);
+    // }
+    // getY()
+    // const 声明常量 例如pie 欧拉常数 不具备变量提升 且有块级作用域 不能重复声明
+    // 赋值了之后不可改变 声明了就必须初始化
+    const ob = {
+        age: 18,
+        link: 'www.baidu.com'
+    }
+    ob.age = 20
+</script>
+</html>

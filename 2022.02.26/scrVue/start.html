@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sss</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<style>
+  .active{
+    color: #ff0000;
+  }
+</style>
+<body>
+    <div id="app">
+      <button @click="showMessage = !showMessage">click </button>
+      <ul>
+        <!-- v-for(item,index) 第一项是数据的每一项内容 第二项每一项的下标 -->
+        <li 
+          v-for="(item,index) in menu" 
+          :key="index" 
+          @click="test(index)"
+          v-bind:class="{'active':index === active}">{{ item + index }}</li>
+      </ul>
+      <input type="text" v-model="inputValue" placeholder="请输入">
+      <p style="font-size: 42px;">{{ inputValue }}</p>
+      <p v-show="showMessage" style="font-size: 42px;">{{message}}</p>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+      el: '#app', // 根标签
+      data: { // 数据模块
+        message: 'Hello Vue!',
+        age: '18',
+        menu: ['首页','功能介绍','定价方案','案例','海外推广','Tiktok云手机','数据','sss'],
+        active: 0,
+        showMessage: false,
+        inputValue: ''
+      },
+      methods: { // 方法模块 函数模块
+        test(index) {
+          this.active = index
+        }
+      },
+      created() {
+        document.title="xsasddsasdasda";
+
+      }
+    })
+</script>
+</html>
