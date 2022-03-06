@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+// 注册路由
 const routes = [
   {
     path: '/',
