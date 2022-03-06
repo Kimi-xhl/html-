@@ -1,6 +1,6 @@
 <template>
   <!-- 只能有一个根标签  -->
-  <div></div>
+  <div>MyView</div>
 </template>
 
 <script>
