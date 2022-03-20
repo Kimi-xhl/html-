@@ -34,7 +34,7 @@ export default {
       oplist: ['x','-','+','='],
       current: '',
       main: '0',
-      clean: false, // 按等于号之后的清除数据
+      clean: false, // 按等于键之后的数据清空
       flag: false, // 是否重新置空过
       isNar: true, // True表示正数 false表示负数
       sub: ''
@@ -46,7 +46,8 @@ export default {
       this.isNar = true
       this.sub = ''
       this.flag = false
-    },
+      this.clean = false
+  },
     btnDown(e) {
       this.current = e.target
       e.target.classList.add('btnDown')
@@ -55,12 +56,10 @@ export default {
       this.current.classList.remove('btnDown')
     },
     clickBtn(val) {
-
-      if(this.clean) {
+      /** 按等于号之后清除数据 */
+      if(this.clean){
         this.cleanData()
       }
-
-      this.clean = false
 
       if(this.sub !== '' && !this.flag) {
         this.main = '0'
@@ -85,6 +84,14 @@ export default {
       }
     },
     clickOp(val) {
+
+      if(this.clean){
+        this.sub = this.main + val
+        this.clean = false
+        this.flag = false
+        return
+      }
+
       switch (val) {
         case 'x':
           if(this.flag) {
@@ -146,8 +153,7 @@ export default {
               this.sub = subNumber + '+' + mainNumber + '='
               this.main = result
             }
-
-            this.clean = true // 重置数据
+            this.clean = true
           } else {
             this.sub = this.main + val
           }
