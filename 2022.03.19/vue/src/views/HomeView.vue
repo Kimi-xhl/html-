@@ -34,6 +34,7 @@ export default {
       oplist: ['x','-','+','='],
       current: '',
       main: '0',
+      clean: false, // 按等于号之后的清除数据
       flag: false, // 是否重新置空过
       isNar: true, // True表示正数 false表示负数
       sub: ''
@@ -54,12 +55,17 @@ export default {
       this.current.classList.remove('btnDown')
     },
     clickBtn(val) {
-      debugger
+
+      if(this.clean) {
+        this.cleanData()
+      }
+
+      this.clean = false
+
       if(this.sub !== '' && !this.flag) {
         this.main = '0'
         this.flag = true
       }
-
 
       if (this.main === '0') {
         // 判断输入是否为数字
@@ -81,16 +87,70 @@ export default {
     clickOp(val) {
       switch (val) {
         case 'x':
-          this.sub = this.main + val
-          break
+          if(this.flag) {
+            /** substring(start,end) 接受字符串开始下标 以及 结束下标  */
+            let subNumber = Number(this.sub.substring(0,this.sub.length-1))
+            let mainNumber = Number(this.main)
+            this.flag = false // 重置flag
+            let result = subNumber * mainNumber
+            this.sub = result + 'x'
+            this.main = result
+          } else {
+            this.sub = this.main + val
+          }
+          break;
         case '+':
-          this.sub = this.main + val
+          if(this.flag) {
+            /** substring(start,end) 接受字符串开始下标 以及 结束下标  */
+            let subNumber = Number(this.sub.substring(0,this.sub.length-1))
+            let mainNumber = Number(this.main)
+            this.flag = false // 重置flag
+            let result = subNumber + mainNumber
+            this.sub = result + '+'
+            this.main = result
+          } else {
+            this.sub = this.main + val
+          }
           break
         case '-':
-          this.sub = this.main + val;
+          if(this.flag) {
+            /** substring(start,end) 接受字符串开始下标 以及 结束下标  */
+            let subNumber = Number(this.sub.substring(0,this.sub.length-1))
+            let mainNumber = Number(this.main)
+            this.flag = false // 重置flag
+            let result = subNumber - mainNumber
+            this.sub = result + '-'
+            this.main = result
+          } else {
+            this.sub = this.main + val
+          }
           break
         case '=':
-          this.sub = this.main + val;
+          if(this.flag) {
+            debugger
+            let subNumber = Number(this.sub.substring(0,this.sub.length-1))
+            let mainNumber = Number(this.main)
+
+            let op = this.sub.substring(this.sub.length-1,this.sub.length)
+
+            if ( op === 'x' ){
+              let result = subNumber * mainNumber
+              this.sub = subNumber + '*' + mainNumber + '='
+              this.main = result
+            } else if ( op === '-') {
+              let result = subNumber - mainNumber
+              this.sub = subNumber + '-' + mainNumber + '='
+              this.main = result
+            } else if (op === '+') {
+              let result = subNumber + mainNumber
+              this.sub = subNumber + '+' + mainNumber + '='
+              this.main = result
+            }
+
+            this.clean = true // 重置数据
+          } else {
+            this.sub = this.main + val
+          }
           break
         default:
           console.log('defalut')
