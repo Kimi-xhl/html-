@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="color.css">
+<style>
+    /**
+    * 传统布局方式
+    * position属性 + display属性 + float属性布局
+    * 兼容性好，但是效率低
+    *
+    * flex布局
+    * ...
+    *
+    * grid布局 display grid
+    * 兼容性不如Flex 比较强大
+    */
+</style>
+<style>
+    /** 指定一个容器采用网格布局 */
+    /** 默认情况容器元素都是块级元素 但也可以设置为行内元素 display:inline-grid */
+    /** 设置为网格布局，容器子元素Item的float、display:inline-block、display:table-cell 、vertical-align 会失效 */
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,100px 20px 80px);
+        grid-template-rows: repeat(8,100px) ;
+    }
+    /** 上面代码定义了6列 1、4 宽度为100 2、5 宽度为20 3、6宽度为80px */
+    /*  repeat(3,100px) === 100px 100px 100px  */
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,100px);
+    }
+    /** auto-fill 有时候单元格大小是固定的，但容器大小不确定，如果希望每一行(列)容纳
+        尽可能多的单元格,这时候就可以使用auto-fill关键字自动填充
+        上面代码表示每列宽度100px，然后自动填充，直到容器不能放置更多的列。
+     */
+    .container{
+        display: grid;
+        grid-template-columns: 150px 1fr 2fr;
+    }
+    /**  fr 关键字 fraction
+     *   比例关系 如果两列的宽度分别为1fr 2fr 就表示后者是前者的两倍
+     */
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr minmax(100px,1fr);
+    }
+
+    /** minmax()
+     *  minmax()函数产生一个长度范围 表示长度就在这个范围之中 接受两个参数分别是最小值和最大值
+     */
+
+    .container {
+        display: grid;
+        grid-template-columns: 100px auto 100px;
+    }
+    /** auto关键字由浏览器自己决定长度 */
+    .container {
+        display: grid;
+        grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];
+        grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4 endr];
+    }
+    /** 方括号指定了每一根网格线的名字，方便以后的引用 同一根线可以有多个名字 */
+
+</style>
+<body>
+    <!--  基本概念  -->
+    <div class="container">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+        <div><p>4</p></div>
+        <div><p>5</p></div>
+        <div><p>6</p></div>
+        <div><p>7</p></div>
+        <div><p>8</p></div>
+        <div><p>9</p></div>
+    </div>
+    <!-- 最外层的div就是容器 container，内层三个div就是项目Item -->
+    <!-- 容器内的水平区域为一行 垂直区域为一列  -->
+
+    <!-- cell 单元格-->
+    <!-- 正常情况下 n行和m列会产生 n*m个单元格-->
+
+    <!-- 网格线 grid line   -->
+    <!-- 正常情况下 n行有n+1行水平网格线 m列就有m+1根垂直网格线-->
+</body>
+</html>
