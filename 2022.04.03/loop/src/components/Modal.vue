@@ -5,11 +5,15 @@
       <div class="header">
         <p>{{ title  }}</p>
       </div>
-      <div class="main"></div>
-      <div class="footer"></div>
+      <div class="main">
+        <!--   插槽     -->
+        <slot></slot>
+      </div>
+      <div class="footer">
+        <button @click="clickOk()">确定</button>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -25,12 +29,20 @@ export default {
       required: true // 是否必填
     }
   },
+  data() {
+    return {
+    }
+  },
   created() {
     console.log(this.display)
   },
   methods: {
     clickCover() {
+      console.log(this.$parent)
       this.$parent.modalShow = false
+    },
+    clickOk() {
+      this.$emit('ddd')
     }
   },
 }
