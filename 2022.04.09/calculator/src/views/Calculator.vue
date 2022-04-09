@@ -35,7 +35,8 @@ export default {
       equation: '0',
       isDecimalAdded: false,  // 判断是否输入小数位
       isOperatorAdded: false, // 判断是否已点击 加减乘除
-      isStarted: false // 判断是否已经输入数字
+      isStarted: false, // 判断是否已经输入数字
+      isComplete: false // 计算完成
     }
   },
   methods: {
@@ -45,6 +46,10 @@ export default {
     },
     // when pressed Operators or Numbers
     append(character){
+      if(this.isComplete) {
+        this.equation = '0'
+        this.isComplete = false
+      }
       //start
       if(this.equation === '0'&& !this.isOperator(character)){
         if(character === '.') {
@@ -86,16 +91,26 @@ export default {
           .replace(new RegExp('÷','g'),'/')
 
       this.equation = parseFloat(eval(result).toFixed(9)).toString()
-      console.log(this.equation)
-      // this.equation = parseFloat(eval(result).toFixed(9)).toString()
+      this.isComplete = true
     },
     // when pressed '+/-'
     calculateToggle() {
+      if(this.isOperatorAdded || !this.isStarted) {
+        return
+      }
 
+      this.equation = this.equation + '* -1'
+      this.calculate()
+      this.isComplete = false
     },
     // when pressed '%'
     calculatePencentage() {
-
+      if(this.isOperatorAdded || !this.isStarted) {
+        return
+      }
+      this.equation = this.equation + '* 0.01'
+      this.calculate()
+      this.isComplete = false
     },
     // when pressed 'AC'
     clear() {
